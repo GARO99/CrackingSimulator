@@ -38,7 +38,7 @@ namespace CrackingSimulator.App
                     Wait();
                     position = commandArrayPosition;
                 }
-                Thread.Sleep(200);
+                Thread.Sleep(100);
             }
         }
 

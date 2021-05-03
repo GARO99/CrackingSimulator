@@ -17,7 +17,25 @@ namespace CrackingSimulator.Util
                           $"list admin users >>{Environment.NewLine}" +
                           $"launch authCrack.bin{Environment.NewLine}" +
                           $"activate crack{Environment.NewLine}" +
-                          $"access user [BankAdmin] at [284.753.123.741]{Environment.NewLine}";
+                          $"access user [BankAdmin] at [284.753.123.741]{Environment.NewLine}" +
+                          $"run password crack{Environment.NewLine}" +
+                          $"init login{Environment.NewLine}" +
+                          $"user: BankAdmin{Environment.NewLine}" +
+                          $"password: ************{Environment.NewLine}" +
+                          $"use dbBank{Environment.NewLine}" +
+                          $"SELECT CUSTOMERS FROM BANKACCOUNTS WHERE BALANCE > 1000000.00{Environment.NewLine}" +
+                          $"transfer all [BALANCE] to MyAccount{Environment.NewLine}" +
+                          $"positive{Environment.NewLine}" +
+                           "CODE[try {" + Environment.NewLine +
+                          $"    Statement authRequest = conn.crStat();{Environment.NewLine}" +
+                          $"    ResultSet rs = authRequest.exec(loginQuery);{Environment.NewLine}" +
+                          $"    user_id =  rs.getInt(\"GodeModeQ\");" + Environment.NewLine +
+                           "    if(hashOf(request.getParam(\"password\") != -1)) {" + Environment.NewLine +
+                          $"        throw BadLoginException();{Environment.NewLine}" +
+                           "    } else {" + Environment.NewLine +
+                          $"        authTransaction(10, minutes);" + Environment.NewLine +
+                           "    }" + Environment.NewLine +
+                           "}]";
         }
 
         public void PrintMessage(int position, out bool wait)
@@ -25,7 +43,7 @@ namespace CrackingSimulator.Util
             wait = false;
             switch (position)
             {
-                case 62:
+                case 66:
                     WaitSequence();
                     PrintAccessDenied();
                     wait = true;
@@ -39,7 +57,7 @@ namespace CrackingSimulator.Util
         {
             for (int i = 0; i < 30; i++)
             {
-                if (i == 49) 
+                if (i == 29) 
                     Console.Write($"*{Environment.NewLine}");
                 else
                     Console.Write("*");
