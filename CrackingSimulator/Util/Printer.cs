@@ -7,11 +7,11 @@ namespace CrackingSimulator.Util
 {
     public class Printer
     {
-        public static string commandText { get; set; }
+        public static string CommandText { get; set; }
 
         public Printer()
         {
-            commandText = $"init connection @Server 284.753.123.741{Environment.NewLine}" +
+            CommandText = $"init connection @Server 284.753.123.741{Environment.NewLine}" +
                           $"access folder [Accounts]{Environment.NewLine}" +
                           $"override security settings{Environment.NewLine}" +
                           $"list admin users >>{Environment.NewLine}" +
