@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 
 namespace CrackingSimulator.Util
@@ -35,7 +33,12 @@ namespace CrackingSimulator.Util
                            "    } else {" + Environment.NewLine +
                           $"        authTransaction(10, minutes);" + Environment.NewLine +
                            "    }" + Environment.NewLine +
-                           "}]";
+                           "}]" +
+                          $"transfer all [BALANCE] to MyAccount{Environment.NewLine}" +
+                          $"positive{Environment.NewLine}" +
+                          $"access [BALANCE] @ MyAccount{Environment.NewLine}" +
+                          $"init offshore transfer{Environment.NewLine}" +
+                          $"transfer all to ID[654874984651OMNO] @ Cayman Treasury Bank";
         }
 
         public void PrintMessage(int position, out bool wait)
@@ -57,7 +60,7 @@ namespace CrackingSimulator.Util
         {
             for (int i = 0; i < 30; i++)
             {
-                if (i == 29) 
+                if (i == 29)
                     Console.Write($"*{Environment.NewLine}");
                 else
                     Console.Write("*");
