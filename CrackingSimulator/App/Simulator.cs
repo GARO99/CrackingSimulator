@@ -42,15 +42,16 @@ namespace CrackingSimulator.App
                 if (commandArrayCurrentPosition < cammandArray.Length)
                 {
                     Console.Write(cammandArray[commandArrayCurrentPosition]);
-                    Printer.PrintMessage(commandArrayCurrentPosition, out bool wait);
+                    Printer.PrintEvent(commandArrayCurrentPosition, out bool eventIsPrinted);
                     commandArrayCurrentPosition++;
                     commandArrayPosition = commandArrayCurrentPosition;
                     Thread.Sleep(100);
-                    if (wait) break;
+                    if (eventIsPrinted) break;
                 }
             }
         }
 
+        /// <summary> Wait for the extra console input to be read </summary>
         private void Wait()
         {
             while (true)

@@ -42,26 +42,30 @@ namespace CrackingSimulator.Util
                           $"transfer all to ID[654874984651OMNO] @ Cayman Treasury Bank";
         }
 
-        public void PrintMessage(int position, out bool wait)
+        /// <summary> Print a dynamic event according the current position of commands array </summary>
+        /// <param name="position"> Current position of commands array </param>
+        /// <param name="eventIsPrinted"> out parameter that indicate if a event was printed </param>
+        public void PrintEvent(int position, out bool eventIsPrinted)
         {
-            wait = false;
+            eventIsPrinted = false;
             switch (position)
             {
                 case 66:
                     WaitSequence();
                     PrintAccessDenied();
-                    wait = true;
+                    eventIsPrinted = true;
                     break;
                 case 219:
                     WaitSequence();
                     PrintPasswordCrackSimulator();
-                    wait = true;
+                    eventIsPrinted = true;
                     break;
                 default:
                     break;
             }
         }
 
+        /// <summary> Print a sequence of asterisks imitating load screen </summary>
         public void WaitSequence()
         {
             Console.WriteLine();
@@ -81,6 +85,7 @@ namespace CrackingSimulator.Util
             }
         }
 
+        /// <summary> Print a message of access denied </summary>
         private void PrintAccessDenied()
         {
             Console.WriteLine($"{Environment.NewLine}" +
@@ -89,6 +94,7 @@ namespace CrackingSimulator.Util
                               $"====================={Environment.NewLine}");
         }
 
+        /// <summary> Print the simulation of a password's crack </summary>
         private void PrintPasswordCrackSimulator() 
         {
             Random random = new Random();
