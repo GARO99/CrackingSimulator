@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 
 namespace CrackingSimulator.Util
@@ -33,7 +34,7 @@ namespace CrackingSimulator.Util
                            "    } else {" + Environment.NewLine +
                           $"        authTransaction(10, minutes);" + Environment.NewLine +
                            "    }" + Environment.NewLine +
-                           "}]" +
+                           "}]" + Environment.NewLine +
                           $"transfer all [BALANCE] to MyAccount{Environment.NewLine}" +
                           $"positive{Environment.NewLine}" +
                           $"access [BALANCE] @ MyAccount{Environment.NewLine}" +
@@ -51,6 +52,11 @@ namespace CrackingSimulator.Util
                     PrintAccessDenied();
                     wait = true;
                     break;
+                case 219:
+                    WaitSequence();
+                    PrintPasswordCrackSimulator();
+                    wait = true;
+                    break;
                 default:
                     break;
             }
@@ -58,9 +64,10 @@ namespace CrackingSimulator.Util
 
         public void WaitSequence()
         {
-            for (int i = 0; i < 30; i++)
+            Console.WriteLine();
+            for (int i = 0; i < 25; i++)
             {
-                if (i == 29)
+                if (i == 24)
                     Console.Write($"*{Environment.NewLine}");
                 else
                     Console.Write("*");
@@ -76,9 +83,32 @@ namespace CrackingSimulator.Util
 
         private void PrintAccessDenied()
         {
-            Console.WriteLine($"====================={Environment.NewLine}" +
+            Console.WriteLine($"{Environment.NewLine}" +
+                              $"====================={Environment.NewLine}" +
                               $"|   ACCESS DENIED   |{Environment.NewLine}" +
-                              $"=====================");
+                              $"====================={Environment.NewLine}");
+        }
+
+        private void PrintPasswordCrackSimulator() 
+        {
+            Random random = new Random();
+            const string chars = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
+            for (int i = 0; i < 100; i++)
+            {
+                for (int j = 0; j < 12; j++)
+                {
+                    Console.Write(new string(Enumerable.Repeat(chars, 1).Select(s => s[random.Next(s.Length)]).ToArray()));
+                    Thread.Sleep(10);
+                }
+                if (i < 99)
+                {
+                    int currentLineCursor = Console.CursorTop;
+                    Console.SetCursorPosition(0, Console.CursorTop);
+                    Console.Write(new string(' ', Console.WindowWidth));
+                    Console.SetCursorPosition(0, currentLineCursor);
+                }
+            }
+            Console.WriteLine(Environment.NewLine);
         }
     }
 }
