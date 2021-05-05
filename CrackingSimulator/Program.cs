@@ -10,7 +10,16 @@ namespace CrackingSimulator
         {
             Simulator simulator = new Simulator();
             Printer.PrintWellcomeMessage();
-            simulator.WaitKeyPress();
+            while (true)
+            {
+                ConsoleKeyInfo key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.Enter)
+                {
+                    Console.Clear();
+                    break;
+                }
+            }
+            simulator.Start();
         }
     }
 }

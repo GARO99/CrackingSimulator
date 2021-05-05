@@ -13,8 +13,8 @@ namespace CrackingSimulator.App
             Printer = new Printer();
         }
 
-        /// <summary> Wait for 5 keypresses and type on the console </summary>
-        public void WaitKeyPress()
+        /// <summary> Start the simulation </summary>
+        public void Start()
         {
             int position = 0;
             while (true)
