@@ -1,4 +1,5 @@
 ﻿using CrackingSimulator.App;
+using CrackingSimulator.Util;
 using System;
 
 namespace CrackingSimulator
@@ -8,7 +9,7 @@ namespace CrackingSimulator
         static void Main(string[] args)
         {
             Simulator simulator = new Simulator();
-            Console.WriteLine("Hello World!");
+            Printer.PrintWellcomeMessage();
             simulator.WaitKeyPress();
         }
     }

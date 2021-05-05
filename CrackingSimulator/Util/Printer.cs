@@ -42,6 +42,35 @@ namespace CrackingSimulator.Util
                           $"transfer all to ID[654874984651OMNO] @ Cayman Treasury Bank";
         }
 
+        public static void PrintWellcomeMessage()
+        {
+            string message = "#" + Environment.NewLine +
+                             "#" + Environment.NewLine +
+                             "#         _______" + Environment.NewLine +
+                             "#        /       |" + Environment.NewLine +
+                             "#       /    ____|__  __   ____  __   ____ __   __  __ ________   ____  __" + Environment.NewLine +
+                             "#      |    /    |  |/  | /    \\|  | /    |  | /  /|__|        | /    \\|  |" + Environment.NewLine +
+                             "#      |   |     |   ___|/  __     |/  ___|  |/  /  __|   __   |/  __     |" + Environment.NewLine +
+                             "#      |   |     |  |   |  /  \\    |  /   |     /  |  |  |  |  |  /  \\    |" + Environment.NewLine +
+                             "#      |    \\____|  |   |  \\__/    |  \\___|     \\  |  |  |  |  |  \\__/    |" + Environment.NewLine +
+                             "#       \\        |  |    \\         |\\     |  |\\  \\ |  |  |  |  |\\         |" + Environment.NewLine +
+                             "#        \\_______|__|     \\____/|__| \\____|__| \\__\\|__|__|  |__| \\____    |" + Environment.NewLine +
+                             "#        /       |                                               |       /" + Environment.NewLine +
+                             "#       |   _____|__  ___    ___  __    __ __   ____  __    __   |______/  __  __" + Environment.NewLine +
+                             "#       |  |     |__|/   \\__/   \\|  |  |  |  | /    \\|  |__|  |__  /    \\ |  |/  |" + Environment.NewLine +
+                             "#       |  |_____ __|            |  |  |  |  |/  __     |__    __|/  __  \\|   ___|" + Environment.NewLine +
+                             "#       |____    |  |   _    _   |  |  |  |  |  /  \\    |  |  |  |  /  \\  |  |" + Environment.NewLine +
+                             "#        ____|   |  |  | |  | |  |  |__|  |  |  \\__/    |  |  |  |  \\__/  |  |" + Environment.NewLine +
+                             "#       |        |  |  | |  | |  |        |  |\\         |  |  |   \\      /|  |" + Environment.NewLine +
+                             "#       |_______/|__|__| |__| |__|________|__| \\____/|__|  |__|    \\____/ |__|" + Environment.NewLine +
+                             "#" + Environment.NewLine +
+                             "#" + Environment.NewLine +
+                             "# Press enter to start" + Environment.NewLine +
+                             "#";
+            Console.WriteLine(message);
+
+        }
+
         /// <summary> Print a dynamic event according the current position of commands array </summary>
         /// <param name="position"> Current position of commands array </param>
         /// <param name="eventIsPrinted"> out parameter that indicate if a event was printed </param>
