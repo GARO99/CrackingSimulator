@@ -71,6 +71,14 @@ namespace CrackingSimulator.Util
 
         }
 
+        public static void PrintEndMessage()
+        {
+            Console.WriteLine($"{Environment.NewLine}======================================={Environment.NewLine}" +
+                              $"    --------- END SIMULATION --------   {Environment.NewLine}" +
+                              $"    --- Press enter twice to exit ---  {Environment.NewLine}" +
+                              $"=======================================");
+        }
+
         /// <summary> Print a dynamic event according the current position of commands array </summary>
         /// <param name="position"> Current position of commands array </param>
         /// <param name="eventIsPrinted"> out parameter that indicate if a event was printed </param>

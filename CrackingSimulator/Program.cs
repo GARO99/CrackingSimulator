@@ -20,6 +20,15 @@ namespace CrackingSimulator
                 }
             }
             simulator.Start();
+            Printer.PrintEndMessage();
+            while (true)
+            {
+                ConsoleKeyInfo key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.Enter)
+                {
+                    Environment.Exit(0);
+                }
+            }
         }
     }
 }
