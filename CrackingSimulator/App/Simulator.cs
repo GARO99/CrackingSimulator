@@ -27,7 +27,6 @@ namespace CrackingSimulator.App
                     position = outPrameters.commandArrayPosition;
                     if (outPrameters.endProccess) break;
                 }
-                Thread.Sleep(100);
             }
         }
 
@@ -48,8 +47,8 @@ namespace CrackingSimulator.App
                     Printer.PrintEvent(commandArrayCurrentPosition, out bool eventIsPrinted);
                     commandArrayCurrentPosition++;
                     outPrameters.commandArrayPosition = commandArrayCurrentPosition;
-                    Thread.Sleep(100);
                     if (eventIsPrinted) break;
+                    Thread.Sleep(100);
                 }
                 else
                     outPrameters.endProccess = true;
