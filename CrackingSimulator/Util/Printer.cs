@@ -87,12 +87,12 @@ namespace CrackingSimulator.Util
             eventIsPrinted = false;
             switch (position)
             {
-                case 66:
+                case 64:
                     WaitSequence();
                     PrintAccessDenied();
                     eventIsPrinted = true;
                     break;
-                case 219:
+                case 211:
                     WaitSequence();
                     PrintPasswordCrackSimulator();
                     eventIsPrinted = true;
