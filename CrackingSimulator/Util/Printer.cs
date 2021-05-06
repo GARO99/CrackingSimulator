@@ -75,7 +75,7 @@ namespace CrackingSimulator.Util
         {
             Console.WriteLine($"{Environment.NewLine}======================================={Environment.NewLine}" +
                               $"    --------- END SIMULATION --------   {Environment.NewLine}" +
-                              $"    --- Press enter twice to exit ---  {Environment.NewLine}" +
+                              $"    --- Press enter to exit ---  {Environment.NewLine}" +
                               $"=======================================");
         }
 
